@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: predictionapp-deployment
+  namespace: ingress-nginx  # Make sure to match the namespace with your Ingress
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: prediction-flask-app
+  template:
+    metadata:
+      labels:
+        app: prediction-flask-app
+    spec:
+      containers:
+      - name: prediction-flask-app
+        image: danielemojevbe/prediction_app:1.0
+        ports:
+        - containerPort: 5000  # Match the port with your application's port
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prediction-app-service
+  namespace: ingress-nginx
+spec:
+  selector:
+    app: prediction-app
+  ports:
+    - protocol: TCP
+      port: 90
+      targetPort: 80
+  type: LoadBalancer

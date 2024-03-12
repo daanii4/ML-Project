@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Prediction</title>
+</head>
+<body>
+    <h1>Predict your price for Car</h1>
+    <form action="/predict" method="post">
+        <label for="feature1">Year:</label>
+        <input type="text" id="feature1" name="feature1"><br><br>
+        
+        <label for="feature2">Present_Price	</label>
+        <input type="text" id="feature2" name="feature2"><br><br>
+        
+        <label for="feature3">Kms_Driven:</label>
+        <input type="text" id="feature3" name="feature3"><br><br>
+        
+        <label for="feature4">Fuel_Type(0,1,2):</label>
+        <input type="text" id="feature4" name="feature4"><br><br>
+
+        <label for="feature5">Seller_Type(0,1)</label>
+        <input type="text" id="feature5" name="feature5"><br><br>
+
+        <label for="feature6">Transmission(0,1):</label>
+        <input type="text" id="feature6" name="feature6"><br><br>
+
+        <label for="feature7">Owner(0,1):</label>
+        <input type="text" id="feature7" name="feature7"><br><br>
+
+
+        
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
